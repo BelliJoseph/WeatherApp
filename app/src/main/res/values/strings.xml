@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MyWeatherApp</string>
+    <string name="testString">This is a test string</string>
+    <string name="tempFahrenheit">Fahrenheit Temp.</string>
+    <string name="timeStamp">Forecast Time:</string>
+    <string name="defaultTitle">Default</string>
+    <string name="clickMessage">Click on any selection for more details</string>
+    <string name="goBackToSearch">Go Back\n To City Search</string>
+    <string name="checkWeatherByCity">Check the weather\n forecast by city</string>
+    <string name="enterCityText">Enter a city name to get forecast</string>
+    <string name="enterCityTextHint">Enter city name here</string>
+    <string name="confirm">Confirm</string>
+    <string name="cityNotFound">The city you entered wasn\'t found please try again</string>
+    <string name="cityOf">City of</string>
+    <string name="temperature">Temperature:</string>
+    <string name="feelsLike">Feels like:</string>
+    <string name="rain">Rain amount:</string>
+    <string name="windSpeed">Wind speed:</string>
+    <string name="windGust">Wind gusts:</string>
+    <string name="goBackToForecast">Return To Forecast</string>
+
+
+</resources>
