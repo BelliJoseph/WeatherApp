@@ -11,14 +11,15 @@ import androidx.navigation.fragment.findNavController
 import com.example.myweatherapp.MainActivity
 import com.example.myweatherapp.R
 import com.example.myweatherapp.databinding.FragmentSearchCityBinding
+import com.example.myweatherapp.viewmodel.WeatherViewModel
 
 
-
-class SearchCityFragment : Fragment() {
+class SearchCityFragment : BaseFragment() {
 
     private val binding by lazy{
         FragmentSearchCityBinding.inflate(layoutInflater)
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +34,9 @@ class SearchCityFragment : Fragment() {
 
         binding.searchConfirmButton.setOnClickListener{
             val choice = binding.enterCityEdit.text
-            (activity as MainActivity).userChoice = choice.toString()
+            val upperCityName = (choice[0].uppercaseChar() + choice.substring(1))
+//            (activity as MainActivity).userChoice = choice.toString()
+            weatherViewModel.userChoice = upperCityName
             findNavController().navigate(R.id.action_SearchFragment_to_ForecastFragment)
         }
 

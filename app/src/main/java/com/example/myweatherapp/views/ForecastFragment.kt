@@ -44,16 +44,14 @@ class ForecastFragment() : BaseFragment(), WeatherClickListener {
             adapter = weatherAdapter
         }
 
-        cityName = (activity as MainActivity).userChoice.toString()
-
-        val upperCityName = (cityName[0].uppercaseChar() + cityName.substring(1))
+        cityName = weatherViewModel.userChoice.toString()
 
         weatherViewModel.cityForecast.observe(viewLifecycleOwner, ::handleState)
 
         weatherViewModel.getForecast(cityName)
 
 
-        binding.forecastTitle.text = upperCityName + WEATHER
+        binding.forecastTitle.text = cityName + WEATHER
 
         binding.forecastBackButton.setOnClickListener{
             findNavController().navigate(R.id.action_ForecastFragment_to_SearchFragment2)
@@ -89,7 +87,7 @@ class ForecastFragment() : BaseFragment(), WeatherClickListener {
     }
 
     override fun onWeatherClicked(forecast: Forecast) {
-        (activity as MainActivity).forecastChoice = forecast
+        weatherViewModel.forecastChoice = forecast
         findNavController().navigate(R.id.action_ForecastFragment_to_DetailsFragment)
     }
 

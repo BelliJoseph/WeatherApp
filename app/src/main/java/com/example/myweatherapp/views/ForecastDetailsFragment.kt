@@ -32,8 +32,8 @@ class ForecastDetailsFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val chosenCity = (activity as MainActivity).userChoice
-        val chosenForecast = (activity as MainActivity).forecastChoice
+        val chosenCity = weatherViewModel.userChoice
+        val chosenForecast = weatherViewModel.forecastChoice
 
         val upperCityName = (chosenCity!![0].uppercaseChar() + chosenCity!!.substring(1))
         binding.detailsCityName.text = upperCityName

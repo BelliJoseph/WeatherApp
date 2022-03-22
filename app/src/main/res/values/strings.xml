@@ -7,6 +7,7 @@
     <string name="clickMessage">Click on any selection for more details</string>
     <string name="goBackToSearch">Go Back\n To City Search</string>
     <string name="checkWeatherByCity">Check the weather\n forecast by city</string>
+    <string name="checkWeatherByCity2">Check the weather forecast by city</string>
     <string name="enterCityText">Enter a city name to get forecast</string>
     <string name="enterCityTextHint">Enter city name here</string>
     <string name="confirm">Confirm</string>
