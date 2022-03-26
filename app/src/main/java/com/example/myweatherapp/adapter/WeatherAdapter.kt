@@ -48,18 +48,14 @@ class ForecastViewHolder(
     forecastView: View
     ): RecyclerView.ViewHolder(forecastView){
 
-        private val weatherConverter by lazy{
-            WeatherConverter()
-        }
-
         private val temperature: TextView = forecastView.findViewById(R.id.weatherTemp)
         private val timeStamp: TextView = forecastView.findViewById(R.id.timeStamp)
 
         fun bind(forecast: Forecast){
 
 
-            val temp = weatherConverter.convertKelvinToFahrenheit(forecast.main.temp)
-            val temp1 = weatherConverter.formatDecimal(temp) + "\u2109"
+            val temp = forecast.main.temp.convertKelvinToFahrenheit()
+            val temp1 = temp.formatDecimal() + "\u2109"
             temperature.text = temp1
             timeStamp.text = forecast.dtTxt
 

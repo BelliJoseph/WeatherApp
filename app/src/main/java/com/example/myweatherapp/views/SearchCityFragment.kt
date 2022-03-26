@@ -20,22 +20,14 @@ class SearchCityFragment : BaseFragment() {
         FragmentSearchCityBinding.inflate(layoutInflater)
     }
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {}
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-
         binding.searchConfirmButton.setOnClickListener{
             val choice = binding.enterCityEdit.text
             val upperCityName = (choice[0].uppercaseChar() + choice.substring(1))
-//            (activity as MainActivity).userChoice = choice.toString()
             weatherViewModel.userChoice = upperCityName
             findNavController().navigate(R.id.action_SearchFragment_to_ForecastFragment)
         }
@@ -44,15 +36,4 @@ class SearchCityFragment : BaseFragment() {
         // Inflate the layout for this fragment
         return binding.root
     }
-
-
-
-
-    companion object {
-        fun newInstance(param1: String, param2: String) =
-            SearchCityFragment().apply {
-                arguments = Bundle().apply {}
-            }
-    }
-
 }
