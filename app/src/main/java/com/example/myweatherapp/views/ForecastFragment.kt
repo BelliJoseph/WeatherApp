@@ -17,7 +17,7 @@ import com.example.myweatherapp.model.Forecast
 import com.example.myweatherapp.viewmodel.ResultState
 
 
-class ForecastFragment() : BaseFragment(), WeatherClickListener {
+class ForecastFragment : BaseFragment(), WeatherClickListener {
 
     private val binding by lazy{
         FragmentForecastBinding.inflate(layoutInflater)
@@ -28,11 +28,6 @@ class ForecastFragment() : BaseFragment(), WeatherClickListener {
     }
 
     private lateinit var cityName: String
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {}
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,11 +56,10 @@ class ForecastFragment() : BaseFragment(), WeatherClickListener {
         return binding.root
     }
 
-    private fun handleState(resultState: ResultState?) {
+    private fun handleState(resultState: ResultState) {
         when(resultState){
             is ResultState.LOADING -> {
                 binding.forecastProgressBar.visibility = View.VISIBLE
-//                Toast.makeText(requireContext(), "LOADING....", Toast.LENGTH_LONG).show()
             }
             is ResultState.SUCCESS -> {
                 binding.forecastProgressBar.visibility = View.GONE
@@ -80,8 +74,6 @@ class ForecastFragment() : BaseFragment(), WeatherClickListener {
                         dialogInterface.dismiss()}
                     .create()
                     .show()
-
-            //Toast.makeText(requireContext(), resultState.error.localizedMessage, Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -93,8 +85,6 @@ class ForecastFragment() : BaseFragment(), WeatherClickListener {
 
     companion object {
         private const val WEATHER = " Forecast"
-
-        fun newInstance(param1: String, param2: String) = SearchCityFragment()
     }
 
 }

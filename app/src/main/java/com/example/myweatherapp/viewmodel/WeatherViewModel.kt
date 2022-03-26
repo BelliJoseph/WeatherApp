@@ -26,7 +26,6 @@ class WeatherViewModel(
     private val _cityForecast: MutableLiveData<ResultState> = MutableLiveData(ResultState.LOADING)
     val cityForecast: LiveData<ResultState> get() = _cityForecast
 
-
     fun getForecast(city: String){
         viewModelScope.launch(ioDispatcher) {
             //worker thread
@@ -42,10 +41,10 @@ class WeatherViewModel(
                             _cityForecast.value = ResultState.SUCCESS(it)
                         }
                     }
-                }else{
+                } else {
                     //handle error
-                    throw java.lang.Exception("City name entered not Found")
                     Log.d("***","else statement")
+                    throw java.lang.Exception("City name entered not Found")
                 }
             }catch (e: Exception){
                 //catch any errors
