@@ -5,6 +5,8 @@ This project uses the MVVM + clean architecture using a repository layer for mor
 This project uses the recyclerView component to display the list of movies. 
 The builder pattern was used to create Moshi, OkHttp, and Retrofit.
 
+![MainScreen](https://github.com/user-attachments/assets/b055b2f8-1517-478d-ac0a-2a2b2db8ad92)
+
 ## Libraries
 OkHttp, LoggingInterceptor, and Retrofit were used for network calls for ease of use and reliability.
 ```
