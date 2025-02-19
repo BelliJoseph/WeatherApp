@@ -35,7 +35,6 @@ class SearchCityFragment : BaseFragment() {
         binding.searchConfirmButton.setOnClickListener{
             val choice = binding.enterCityEdit.text
             val upperCityName = (choice[0].uppercaseChar() + choice.substring(1))
-//            (activity as MainActivity).userChoice = choice.toString()
             weatherViewModel.userChoice = upperCityName
             findNavController().navigate(R.id.action_SearchFragment_to_ForecastFragment)
         }

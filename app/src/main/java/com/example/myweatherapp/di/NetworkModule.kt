@@ -1,8 +1,5 @@
 package com.example.myweatherapp.di
 
-import com.example.myweatherapp.adapter.WeatherAdapter
-import com.example.myweatherapp.adapter.WeatherClickListener
-import com.example.myweatherapp.model.Forecast
 import com.example.myweatherapp.rest.WeatherApi
 import com.example.myweatherapp.rest.WeatherRepository
 import com.example.myweatherapp.rest.WeatherRepositoryImpl
@@ -15,7 +12,6 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.create
 import java.util.concurrent.TimeUnit
 
 val networkModule = module {

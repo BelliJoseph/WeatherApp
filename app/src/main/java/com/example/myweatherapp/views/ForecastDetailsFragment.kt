@@ -35,28 +35,28 @@ class ForecastDetailsFragment : BaseFragment() {
         val chosenCity = weatherViewModel.userChoice
         val chosenForecast = weatherViewModel.forecastChoice
 
-        val upperCityName = (chosenCity!![0].uppercaseChar() + chosenCity!!.substring(1))
+        val upperCityName = (chosenCity!![0].uppercaseChar() + chosenCity.substring(1))
         binding.detailsCityName.text = upperCityName
         binding.detailsTime.text = chosenForecast!!.dtTxt.toString()
 
         val tempChange = weatherConverter.convertKelvinToFahrenheit(
-             chosenForecast!!.main.temp
+             chosenForecast.main.temp
         )
         val formatTemp = weatherConverter.formatDecimal(tempChange) + "\u2109"
         binding.detailsTemp.text = formatTemp
 
         val feelsLikeChange = weatherConverter.convertKelvinToFahrenheit(
-            chosenForecast!!.main.feelsLike
+            chosenForecast.main.feelsLike
         )
         val formatFeelsLike = weatherConverter.formatDecimal(feelsLikeChange) + "\u2109"
         binding.detailsFeelsLike.text = formatFeelsLike
 
-        binding.detailsRain.text = chosenForecast!!.rain.toString()
+        binding.detailsRain.text = chosenForecast.rain.toString()
 
-        val formatWind = weatherConverter.formatDecimal(chosenForecast!!.wind.speed) + "mph"
+        val formatWind = weatherConverter.formatDecimal(chosenForecast.wind.speed) + "mph"
         binding.detailsWindSpeed.text = formatWind
 
-        val formatGust = weatherConverter.formatDecimal(chosenForecast!!.wind.gust) + "mph"
+        val formatGust = weatherConverter.formatDecimal(chosenForecast.wind.gust) + "mph"
         binding.detailsWindGust.text = formatGust
 
         binding.detailsBackButton.setOnClickListener{

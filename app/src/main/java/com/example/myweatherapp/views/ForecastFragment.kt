@@ -50,8 +50,8 @@ class ForecastFragment() : BaseFragment(), WeatherClickListener {
 
         weatherViewModel.getForecast(cityName)
 
-
-        binding.forecastTitle.text = cityName + WEATHER
+        val forecastTitle = cityName + WEATHER
+        binding.forecastTitle.text = forecastTitle
 
         binding.forecastBackButton.setOnClickListener{
             findNavController().navigate(R.id.action_ForecastFragment_to_SearchFragment2)
@@ -65,7 +65,6 @@ class ForecastFragment() : BaseFragment(), WeatherClickListener {
         when(resultState){
             is ResultState.LOADING -> {
                 binding.forecastProgressBar.visibility = View.VISIBLE
-//                Toast.makeText(requireContext(), "LOADING....", Toast.LENGTH_LONG).show()
             }
             is ResultState.SUCCESS -> {
                 binding.forecastProgressBar.visibility = View.GONE
@@ -81,7 +80,10 @@ class ForecastFragment() : BaseFragment(), WeatherClickListener {
                     .create()
                     .show()
 
-            //Toast.makeText(requireContext(), resultState.error.localizedMessage, Toast.LENGTH_LONG).show()
+            }
+
+            else -> {
+                //do nothing
             }
         }
     }
